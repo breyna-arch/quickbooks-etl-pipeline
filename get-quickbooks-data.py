@@ -349,6 +349,8 @@ class QuickBooksSync:
         if not self.access_token:
             logging.error("No valid access token")
             return False
+
+        threads = []
         
         with ThreadPoolExecutor(max_workers=3) as executor:
             futures = {
